@@ -1,5 +1,6 @@
 const Product = require("../models/product");
 
+// For testing
 const getAllProductsStatic = async (req, res) => {
   // Function has access to throw, because this function is wrapped by express-async-errors
   // throw new Error("Testing async errors");
@@ -8,6 +9,7 @@ const getAllProductsStatic = async (req, res) => {
     .select("name price");
   res.status(200).json({ products: products, nbHits: products.length });
 };
+
 
 const getAllProducts = async (req, res) => {
   const { featured, company, name, sort, fields, numericFilters } = req.query;
